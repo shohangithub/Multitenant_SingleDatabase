@@ -3,5 +3,6 @@
 ################################################################################
 
 /.vs
-/Multitenant_SingleDatabase/obj
-/Multitenant_SingleDatabase/bin/Debug/net7.0
+**/obj
+**/bin
+
