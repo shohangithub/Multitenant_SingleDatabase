@@ -6,6 +6,15 @@ using Multitenant_SingleDatabase.PermissionsCode;
 using AuthPermissions.BaseCode.SetupCode;
 using AuthPermissions.BaseCode;
 using Common.IdentityCookieCode;
+using AuthPermissions.AspNetCore;
+using Multitenant_SingleDatabase.InvoiceCode.Services;
+using Multitenant_SingleDatabase.InvoiceCode.EfCoreCode;
+using AuthPermissions.AspNetCore.Services;
+using RunMethodsSequentially;
+using AuthPermissions.AspNetCore.StartupServices;
+using Multitenant_SingleDatabase.InvoiceCode.AppStart;
+using AuthPermissions.SupportCode.AddUsersServices.Authentication;
+using AuthPermissions.SupportCode.AddUsersServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,8 +56,38 @@ builder.Services.RegisterAuthPermissions<SingleDbPermissions>(options =>
     options.PathToFolderToLock = builder.Environment.WebRootPath;
 })
     //NOTE: This uses the same database as the individual accounts DB
-    .UsingEfCoreSqlServer(connectionString);
-    
+    .UsingEfCoreSqlServer(connectionString)
+    .IndividualAccountsAuthentication()
+    .RegisterAddClaimToUser<AddTenantNameClaim>()
+    .RegisterAddClaimToUser<AddRefreshEveryMinuteClaim>()
+    .RegisterTenantChangeService<InvoiceTenantChangeService>()
+    .AddRolesPermissionsIfEmpty(SingleAppAuthSetupData.RolesDefinition)
+    .AddTenantsIfEmpty(SingleAppAuthSetupData.TenantDefinition)
+    .AddAuthUsersIfEmpty(SingleAppAuthSetupData.UsersRolesDefinition)
+    .RegisterFindUserInfoService<IndividualAccountUserLookup>()
+    .RegisterAuthenticationProviderReader<SyncIndividualAccountUsers>()
+    .AddSuperUserToIndividualAccounts()
+    .SetupAspNetCoreAndDatabase(options =>
+    {
+        //Migrate individual account database
+        options.RegisterServiceToRunInJob<StartupServiceMigrateAnyDbContext<ApplicationDbContext>>();
+        //Add demo users to the database (if no individual account exist)
+        options.RegisterServiceToRunInJob<StartupServicesIndividualAccountsAddDemoUsers>();
+
+        //Migrate the application part of the database
+        options.RegisterServiceToRunInJob<StartupServiceMigrateAnyDbContext<InvoicesDbContext>>();
+        //This seeds the invoice database (if empty)
+        options.RegisterServiceToRunInJob<StartupServiceSeedInvoiceDbContext>();
+    });
+
+
+//manually add services from the AuthPermissions.SupportCode project
+//Add the SupportCode services
+builder.Services.AddTransient<IAddNewUserManager, IndividualUserAddUserManager<IdentityUser>>();
+builder.Services.AddTransient<ISignInAndCreateTenant, SignInAndCreateTenant>();
+builder.Services.AddTransient<IInviteNewUserService, InviteNewUserService>();
+
+builder.Services.RegisterSingleDbInvoices(builder.Configuration);
 
 //builder.Services.AddRazorPages();
 

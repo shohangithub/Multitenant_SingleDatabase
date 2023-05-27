@@ -78,7 +78,7 @@ namespace AuthPermissions.BaseCode.DataLayer.Classes
         /// This the combines primary key of all parents (can be null)
         /// </summary>
         [MaxLength(AuthDbConstants.TenantDataKeySize)]
-        public string ParentDataKey { get; private set; }
+        public string? ParentDataKey { get; private set; }
 
         /// <summary>
         /// This is the name defined for this tenant, and must be unique
@@ -105,7 +105,7 @@ namespace AuthPermissions.BaseCode.DataLayer.Classes
         /// If sharding is turned on then this will contain the name of database data
         /// in the shardingsettings.json file. This must not be null.
         /// </summary>
-        public string DatabaseInfoName { get; private set; }
+        public string? DatabaseInfoName { get; private set; }
 
         //---------------------------------------------------------
         //relationships - only used for hierarchical multi-tenant system

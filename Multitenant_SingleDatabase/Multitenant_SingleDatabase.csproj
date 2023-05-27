@@ -20,8 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AuthPermissions\AuthPermissions.csproj" />
+    <ProjectReference Include="..\AuthPermissions.SupportCode\AuthPermissions.SupportCode.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\Multitenant_SingleDatabase.InvoiceCode\Multitenant_SingleDatabase.InvoiceCode.csproj" />
   </ItemGroup>
 
 </Project>

@@ -89,7 +89,7 @@ namespace AuthPermissions.BaseCode.DataLayer.Classes
         /// <summary>
         /// foreign key for multi-tenant systems (optional)
         /// </summary>
-        public int? TenantId { get; private set; }
+        public Nullable<int> TenantId { get; private set; }
 
         /// <summary>
         /// Tenant for multi-tenant systems

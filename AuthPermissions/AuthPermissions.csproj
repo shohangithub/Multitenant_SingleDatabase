@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthPermissions.BaseCode\AuthPermissions.BaseCode.csproj" />
+    <ProjectReference Include="..\AuthPermissions.SqlServer\AuthPermissions.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>
