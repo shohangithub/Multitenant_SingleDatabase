@@ -43,7 +43,6 @@ namespace AuthPermissions.SqlServer.Migrations
                         .HasColumnType("bit");
 
                     b.Property<int?>("TenantId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
@@ -221,9 +220,7 @@ namespace AuthPermissions.SqlServer.Migrations
                 {
                     b.HasOne("AuthPermissions.BaseCode.DataLayer.Classes.Tenant", "UserTenant")
                         .WithMany()
-                        .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TenantId");
 
                     b.Navigation("UserTenant");
                 });

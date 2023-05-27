@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AuthPermissions.SqlServer.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class intial_migration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,11 +54,11 @@ namespace AuthPermissions.SqlServer.Migrations
                 {
                     TenantId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ParentDataKey = table.Column<string>(type: "varchar(250)", unicode: false, maxLength: 250, nullable: false),
+                    ParentDataKey = table.Column<string>(type: "varchar(250)", unicode: false, maxLength: 250, nullable: true),
                     TenantFullName = table.Column<string>(type: "nvarchar(400)", maxLength: 400, nullable: false),
                     IsHierarchical = table.Column<bool>(type: "bit", nullable: false),
                     HasOwnDb = table.Column<bool>(type: "bit", nullable: false),
-                    DatabaseInfoName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DatabaseInfoName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ParentTenantId = table.Column<int>(type: "int", nullable: true),
                     ConcurrencyToken = table.Column<byte[]>(type: "ROWVERSION", rowVersion: true, nullable: true)
                 },
@@ -82,7 +82,7 @@ namespace AuthPermissions.SqlServer.Migrations
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     IsDisabled = table.Column<bool>(type: "bit", nullable: false),
-                    TenantId = table.Column<int>(type: "int", nullable: false),
+                    TenantId = table.Column<int>(type: "int", nullable: true),
                     ConcurrencyToken = table.Column<byte[]>(type: "ROWVERSION", rowVersion: true, nullable: true)
                 },
                 constraints: table =>
@@ -93,8 +93,7 @@ namespace AuthPermissions.SqlServer.Migrations
                         column: x => x.TenantId,
                         principalSchema: "authp",
                         principalTable: "Tenants",
-                        principalColumn: "TenantId",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "TenantId");
                 });
 
             migrationBuilder.CreateTable(

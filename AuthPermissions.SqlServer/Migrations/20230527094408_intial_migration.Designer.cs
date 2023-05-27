@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuthPermissions.SqlServer.Migrations
 {
     [DbContext(typeof(AuthPermissionsDbContext))]
-    [Migration("20230524195529_Initial")]
-    partial class Initial
+    [Migration("20230527094408_intial_migration")]
+    partial class intial_migration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,7 +46,6 @@ namespace AuthPermissions.SqlServer.Migrations
                         .HasColumnType("bit");
 
                     b.Property<int?>("TenantId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
@@ -145,7 +144,6 @@ namespace AuthPermissions.SqlServer.Migrations
                         .HasColumnType("ROWVERSION");
 
                     b.Property<string>("DatabaseInfoName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("HasOwnDb")
@@ -155,7 +153,6 @@ namespace AuthPermissions.SqlServer.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ParentDataKey")
-                        .IsRequired()
                         .HasMaxLength(250)
                         .IsUnicode(false)
                         .HasColumnType("varchar(250)");
@@ -226,9 +223,7 @@ namespace AuthPermissions.SqlServer.Migrations
                 {
                     b.HasOne("AuthPermissions.BaseCode.DataLayer.Classes.Tenant", "UserTenant")
                         .WithMany()
-                        .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TenantId");
 
                     b.Navigation("UserTenant");
                 });

@@ -89,13 +89,13 @@ namespace AuthPermissions.BaseCode.DataLayer.Classes
         /// <summary>
         /// foreign key for multi-tenant systems (optional)
         /// </summary>
-        public Nullable<int> TenantId { get; private set; }
+        public int? TenantId { get; private set; }
 
         /// <summary>
         /// Tenant for multi-tenant systems
         /// </summary>
         [ForeignKey(nameof(TenantId))]
-        public Tenant UserTenant { get; private set; }
+        public Tenant? UserTenant { get; private set; }
 
         //--------------------------------------------------
         // Exception Error name
