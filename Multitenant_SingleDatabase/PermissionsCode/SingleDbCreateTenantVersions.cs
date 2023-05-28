@@ -1,6 +1,6 @@
 ﻿using AuthPermissions.SupportCode.AddUsersServices;
 
-namespace Multitenant_SingleDatabase.PermissionsCode
+namespace Multitenant_Sharing.PermissionsCode
 {
     public class SingleDbCreateTenantVersions
     {

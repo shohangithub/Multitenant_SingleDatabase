@@ -1,12 +1,12 @@
 ﻿using AuthPermissions.SupportCode.AddUsersServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Multitenant_SingleDatabase.InvoiceCode.Services;
-using Multitenant_SingleDatabase.Models;
-using Multitenant_SingleDatabase.PermissionsCode;
+using Multitenant_Sharing.InvoiceCode.Services;
+using Multitenant_Sharing.Models;
+using Multitenant_Sharing.PermissionsCode;
 using System.Diagnostics;
 
-namespace Multitenant_SingleDatabase.Controllers
+namespace Multitenant_Sharing.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,6 +1,6 @@
 ﻿using AuthPermissions.AdminCode;
 
-namespace Multitenant_SingleDatabase.Models
+namespace Multitenant_Sharing.Models
 {
     public class AuthIdAndChange
     {

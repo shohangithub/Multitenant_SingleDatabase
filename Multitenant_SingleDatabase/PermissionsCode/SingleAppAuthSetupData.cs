@@ -1,7 +1,7 @@
 ﻿using AuthPermissions.BaseCode.DataLayer.Classes.SupportTypes;
 using AuthPermissions.BaseCode.SetupCode;
 
-namespace Multitenant_SingleDatabase.PermissionsCode
+namespace Multitenant_Sharing.PermissionsCode
 {
     public class SingleAppAuthSetupData
     {

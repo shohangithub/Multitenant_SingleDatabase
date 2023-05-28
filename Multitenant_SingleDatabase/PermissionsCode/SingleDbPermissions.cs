@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Multitenant_SingleDatabase.PermissionsCode
+namespace Multitenant_Sharing.PermissionsCode
 {
     /// <summary>
     /// This is an example of how you might build a real application

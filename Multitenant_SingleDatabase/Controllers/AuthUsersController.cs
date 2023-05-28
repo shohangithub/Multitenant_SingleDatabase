@@ -4,10 +4,10 @@ using AuthPermissions.AdminCode;
 using Microsoft.EntityFrameworkCore;
 using AuthPermissions.BaseCode.CommonCode;
 using AuthPermissions.AspNetCore;
-using Multitenant_SingleDatabase.PermissionsCode;
-using Multitenant_SingleDatabase.Models;
+using Multitenant_Sharing.PermissionsCode;
+using Multitenant_Sharing.Models;
 
-namespace Multitenant_SingleDatabase.Controllers
+namespace Multitenant_Sharing.Controllers
 {
     public class AuthUsersController : Controller
     {

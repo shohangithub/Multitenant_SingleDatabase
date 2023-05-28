@@ -2,14 +2,14 @@
 using AuthPermissions.BaseCode.PermissionsCode;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Multitenant_SingleDatabase.InvoiceCode.AppStart;
-using Multitenant_SingleDatabase.InvoiceCode.Dtos;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreCode;
-using Multitenant_SingleDatabase.InvoiceCode.Services;
-using Multitenant_SingleDatabase.PermissionsCode;
+using Multitenant_Sharing.InvoiceCode.AppStart;
+using Multitenant_Sharing.InvoiceCode.Dtos;
+using Multitenant_Sharing.InvoiceCode.EfCoreClasses;
+using Multitenant_Sharing.InvoiceCode.EfCoreCode;
+using Multitenant_Sharing.InvoiceCode.Services;
+using Multitenant_Sharing.PermissionsCode;
 
-namespace Multitenant_SingleDatabase.Controllers
+namespace Multitenant_Sharing.Controllers
 {
     public class InvoiceController : Controller
     {

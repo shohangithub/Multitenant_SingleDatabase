@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant_SingleDatabase", "Multitenant_SingleDatabase\Multitenant_SingleDatabase.csproj", "{8A266ECD-6F1B-497B-92DF-73992611CB16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant_Sharing", "Multitenant_SingleDatabase\Multitenant_Sharing.csproj", "{8A266ECD-6F1B-497B-92DF-73992611CB16}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPermissions", "AuthPermissions\AuthPermissions.csproj", "{F15141D5-7E99-4A51-8BE9-F1669C022359}"
 EndProject
@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPermissions.AspNetCore", "AuthPermissions.AspNetCore\AuthPermissions.AspNetCore.csproj", "{3F6879F2-C074-4843-BCCA-9AF621751844}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multitenant_SingleDatabase.InvoiceCode", "Multitenant_SingleDatabase.InvoiceCode\Multitenant_SingleDatabase.InvoiceCode.csproj", "{378FDB0B-6A12-4C5A-8BCB-3CB3B21B1DC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant_SingleDatabase.InvoiceCode", "Multitenant_SingleDatabase.InvoiceCode\Multitenant_SingleDatabase.InvoiceCode.csproj", "{378FDB0B-6A12-4C5A-8BCB-3CB3B21B1DC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthPermissions.SupportCode", "AuthPermissions.SupportCode\AuthPermissions.SupportCode.csproj", "{C93DD96A-35A8-4334-9C91-7B3627C6EF46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPermissions.SupportCode", "AuthPermissions.SupportCode\AuthPermissions.SupportCode.csproj", "{C93DD96A-35A8-4334-9C91-7B3627C6EF46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthPermissions.SqlServer", "AuthPermissions.SqlServer\AuthPermissions.SqlServer.csproj", "{7B67B708-0C2D-473E-8E87-571C9A70417E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPermissions.SqlServer", "AuthPermissions.SqlServer\AuthPermissions.SqlServer.csproj", "{7B67B708-0C2D-473E-8E87-571C9A70417E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

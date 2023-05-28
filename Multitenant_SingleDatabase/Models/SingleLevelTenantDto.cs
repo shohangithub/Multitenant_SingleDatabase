@@ -4,7 +4,7 @@ using AuthPermissions.BaseCode.DataLayer.Classes.SupportTypes;
 using AuthPermissions.BaseCode.DataLayer.Classes;
 using System.ComponentModel.DataAnnotations;
 
-namespace Multitenant_SingleDatabase.Models
+namespace Multitenant_Sharing.Models
 {
     public class SingleLevelTenantDto
     {
