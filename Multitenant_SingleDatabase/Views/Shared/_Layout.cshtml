@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using AuthPermissions.AspNetCore.AccessTenantData;
+@using AuthPermissions.BaseCode.PermissionsCode;
+@using Multitenant_SingleDatabase.PermissionsCode;
+@inject ILinkToTenantDataService LinkToTenantDataService
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,6 +26,52 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="CreateTenant">Sign up now!</a>
+                            </li>
+                        }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            @if (User.HasPermission(SingleDbPermissions.TenantAccessData))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Invoice" asp-action="Index">Invoices</a>
+                                </li>
+                            }
+                            <li class="dropdown nav-link text-dark">
+
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Auth Admin
+                                </a>
+                                <div >
+                                    <a class="dropdown-item" asp-area="" asp-controller="AuthUsers" asp-action="Index">List all AuthUsers</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="Index">List Roles</a>
+                                    @if (User.HasPermission(SingleDbPermissions.TenantList))
+                                    {
+                                        <a class="dropdown-item" asp-area="" asp-controller="Tenant" asp-action="Index">List Tenants</a>
+                                    }
+                                    @if (User.HasPermission(SingleDbPermissions.PermissionRead))
+                                    {
+                                        <a class="dropdown-item" asp-area="" asp-controller="Roles" asp-action="ListPermissions">List all Permissions</a>
+                                    }
+                                </div>
+                            </li>
+                            <li class="dropdown nav-link text-dark">
+                                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Users info
+                                </a>
+                                <div class="">
+                                    <a class="dropdown-item" asp-area="" asp-controller="LoggedInUser" asp-action="Index">Your claims</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="LoggedInUser" asp-action="AuthUserInfo">Your auth data</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="LoggedInUser" asp-action="UserPermissions">Your Permissions</a>
+                                </div>
+                            </li>
+                        }
+
+
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
@@ -34,9 +84,26 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            <div class="text-danger">
+                @{
+                    var tenantName = LinkToTenantDataService.GetNameOfLinkedTenant();
+                    if (tenantName != null)
+                    {
+                        if (!User.Identity.IsAuthenticated)
+                        {
+                            <script>window.location.replace("@Url.Action("StopAccess", "Tenant", new { gotoHome = true }) ");</script>
+                        }
+                        <div>
+                            Be careful! You are currently linked to the <strong>@tenantName</strong> tenant's data.
+                            <a class="btn btn-outline-primary btn-sm" asp-area="" asp-controller="Tenant" asp-action="StopAccess">Stop Linking</a>
+                        </div>
+                    }
+                }
+            </div>
             @RenderBody()
         </main>
     </div>
+
 
     <footer class="border-top footer text-muted">
         <div class="container">
