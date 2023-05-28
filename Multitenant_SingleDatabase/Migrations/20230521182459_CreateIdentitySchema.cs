@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Multitenant_Sharing.Migrations
+namespace Multitenant_Sharding.Migrations
 {
     /// <inheritdoc />
     public partial class CreateIdentitySchema : Migration

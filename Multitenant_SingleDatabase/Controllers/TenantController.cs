@@ -3,11 +3,11 @@ using AuthPermissions.AspNetCore.AccessTenantData;
 using AuthPermissions.AspNetCore;
 using AuthPermissions.BaseCode.CommonCode;
 using Microsoft.AspNetCore.Mvc;
-using Multitenant_Sharing.PermissionsCode;
-using Multitenant_Sharing.Models;
+using Multitenant_Sharding.PermissionsCode;
+using Multitenant_Sharding.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Multitenant_Sharing.Controllers
+namespace Multitenant_Sharding.Controllers
 {
     public class TenantController : Controller
     {

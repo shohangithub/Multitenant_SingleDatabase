@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant_Sharing", "Multitenant_SingleDatabase\Multitenant_Sharing.csproj", "{8A266ECD-6F1B-497B-92DF-73992611CB16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant_Sharding", "Multitenant_SingleDatabase\Multitenant_Sharding.csproj", "{8A266ECD-6F1B-497B-92DF-73992611CB16}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPermissions", "AuthPermissions\AuthPermissions.csproj", "{F15141D5-7E99-4A51-8BE9-F1669C022359}"
 EndProject

@@ -2,14 +2,14 @@
 using AuthPermissions.BaseCode.PermissionsCode;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Multitenant_Sharing.InvoiceCode.AppStart;
-using Multitenant_Sharing.InvoiceCode.Dtos;
-using Multitenant_Sharing.InvoiceCode.EfCoreClasses;
-using Multitenant_Sharing.InvoiceCode.EfCoreCode;
-using Multitenant_Sharing.InvoiceCode.Services;
-using Multitenant_Sharing.PermissionsCode;
+using Multitenant_Sharding.InvoiceCode.AppStart;
+using Multitenant_Sharding.InvoiceCode.Dtos;
+using Multitenant_Sharding.InvoiceCode.EfCoreClasses;
+using Multitenant_Sharding.InvoiceCode.EfCoreCode;
+using Multitenant_Sharding.InvoiceCode.Services;
+using Multitenant_Sharding.PermissionsCode;
 
-namespace Multitenant_Sharing.Controllers
+namespace Multitenant_Sharding.Controllers
 {
     public class InvoiceController : Controller
     {

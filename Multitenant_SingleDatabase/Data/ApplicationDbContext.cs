@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Multitenant_Sharing.Data
+namespace Multitenant_Sharding.Data
 {
     public class ApplicationDbContext: IdentityDbContext
     {

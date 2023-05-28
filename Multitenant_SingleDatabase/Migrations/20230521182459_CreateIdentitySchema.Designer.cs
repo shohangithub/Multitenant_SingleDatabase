@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Multitenant_Sharing.Data;
+using Multitenant_Sharding.Data;
 
 #nullable disable
 
-namespace Multitenant_Sharing.Migrations
+namespace Multitenant_Sharding.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20230521182459_CreateIdentitySchema")]

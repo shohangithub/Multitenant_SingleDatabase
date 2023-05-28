@@ -1,18 +1,18 @@
 using AuthPermissions;
-using Multitenant_Sharing.Data;
+using Multitenant_Sharding.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using Multitenant_Sharing.PermissionsCode;
+using Multitenant_Sharding.PermissionsCode;
 using AuthPermissions.BaseCode.SetupCode;
 using AuthPermissions.BaseCode;
 using Common.IdentityCookieCode;
 using AuthPermissions.AspNetCore;
-using Multitenant_Sharing.InvoiceCode.Services;
-using Multitenant_Sharing.InvoiceCode.EfCoreCode;
+using Multitenant_Sharding.InvoiceCode.Services;
+using Multitenant_Sharding.InvoiceCode.EfCoreCode;
 using AuthPermissions.AspNetCore.Services;
 using RunMethodsSequentially;
 using AuthPermissions.AspNetCore.StartupServices;
-using Multitenant_Sharing.InvoiceCode.AppStart;
+using Multitenant_Sharding.InvoiceCode.AppStart;
 using AuthPermissions.SupportCode.AddUsersServices.Authentication;
 using AuthPermissions.SupportCode.AddUsersServices;
 

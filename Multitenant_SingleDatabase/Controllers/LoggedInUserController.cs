@@ -4,7 +4,7 @@ using AuthPermissions.BaseCode.PermissionsCode;
 using Common.CommonAdmin;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Multitenant_Sharing.Controllers
+namespace Multitenant_Sharding.Controllers
 {
     public class LoggedInUserController : Controller
     {

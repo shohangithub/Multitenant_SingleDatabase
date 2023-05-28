@@ -1,4 +1,4 @@
-﻿namespace Multitenant_Sharing.Models
+﻿namespace Multitenant_Sharding.Models
 {
     public class InviteUserResult
     {

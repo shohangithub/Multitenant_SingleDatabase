@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Multitenant_Sharing.PermissionsCode
+namespace Multitenant_Sharding.PermissionsCode
 {
     /// <summary>
     /// This is an example of how you might build a real application

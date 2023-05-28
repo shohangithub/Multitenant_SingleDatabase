@@ -5,10 +5,10 @@ using AuthPermissions.SupportCode.AddUsersServices;
 using Common.CommonAdmin;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Multitenant_Sharing.Models;
-using Multitenant_Sharing.PermissionsCode;
+using Multitenant_Sharding.Models;
+using Multitenant_Sharding.PermissionsCode;
 
-namespace Multitenant_Sharing.Controllers
+namespace Multitenant_Sharding.Controllers
 {
     public class TenantAdminController : Controller
     {

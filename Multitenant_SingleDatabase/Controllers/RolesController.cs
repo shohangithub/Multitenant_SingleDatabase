@@ -4,9 +4,9 @@ using AuthPermissions.BaseCode.CommonCode;
 using Common.CommonAdmin;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Multitenant_Sharing.PermissionsCode;
+using Multitenant_Sharding.PermissionsCode;
 
-namespace Multitenant_Sharing.Controllers
+namespace Multitenant_Sharding.Controllers
 {
     public class RolesController : Controller
     {
