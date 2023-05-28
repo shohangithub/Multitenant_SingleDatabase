@@ -5,15 +5,14 @@ using AuthPermissions.BaseCode.CommonCode;
 
 namespace Multitenant.SingleLevelSharding.AppStart
 {
-    public class SeedInvoiceDbContext
+    public class SeedShardingDbContext
     {
-        private readonly InvoicesDbContext _context;
+        private readonly ShardingSingleDbContext _context;
 
-        public SeedInvoiceDbContext(InvoicesDbContext context)
+        public SeedShardingDbContext(ShardingSingleDbContext context)
         {
             _context = context;
         }
-
 
         public async Task SeedInvoicesForAllTenantsAsync(IEnumerable<Tenant> authTenants)
         {

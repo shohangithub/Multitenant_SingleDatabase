@@ -18,7 +18,7 @@ namespace Multitenant.SingleLevelSharding.Services
             _userAdmin = userAdmin;
         }
 
-        public async Task<Claim> AddClaimToUserAsync(string userId)
+        public async Task<Claim?> AddClaimToUserAsync(string userId)
         {
             var user = (await _userAdmin.FindAuthUserByUserIdAsync(userId)).Result;
 

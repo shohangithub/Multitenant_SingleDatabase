@@ -8,9 +8,9 @@ namespace Multitenant.SingleLevelSharding.AppStart
 {
     public static class StartupExtensions
     {
-        public const string InvoicesDbContextHistoryName = "SingleDb-InvoicesDbContext";
+        public const string ShardingSingleDbContextHistoryName = "Example6-ShardingSingleDbContext";
 
-        public static void RegisterSingleDbInvoices(this IServiceCollection services, IConfiguration configuration)
+        public static void RegisterExample6Invoices(this IServiceCollection services, IConfiguration configuration)
         {
             //Register any services in this project
             services.RegisterAssemblyPublicNonGenericClasses()
@@ -18,10 +18,10 @@ namespace Multitenant.SingleLevelSharding.AppStart
                 .AsPublicImplementedInterfaces();
 
             //Register the retail database to the same database used for individual accounts and AuthP database
-            services.AddDbContext<InvoicesDbContext>(options =>
+            services.AddDbContext<ShardingSingleDbContext>(options =>
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"), dbOptions =>
-                dbOptions.MigrationsHistoryTable(InvoicesDbContextHistoryName)));
+                dbOptions.MigrationsHistoryTable(ShardingSingleDbContextHistoryName)));
         }
     }
 }

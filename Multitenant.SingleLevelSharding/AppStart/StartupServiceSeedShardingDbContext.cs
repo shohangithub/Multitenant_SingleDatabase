@@ -3,11 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Multitenant.SingleLevelSharding.EfCoreCode;
 using RunMethodsSequentially;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Multitenant.SingleLevelSharding.AppStart
 {
@@ -15,23 +10,23 @@ namespace Multitenant.SingleLevelSharding.AppStart
     /// If there are no RetailOutlets in the RetailDbContext it seeds the RetailDbContext with RetailOutlets and gives each of them some stock
     /// </summary>
 
-    public class StartupServiceSeedInvoiceDbContext : IStartupServiceToRunSequentially
+    public class StartupServiceSeedShardingDbContext : IStartupServiceToRunSequentially
     {
-        public int OrderNum { get; } //runs after migration of the InvoicesDbContext
+        public int OrderNum { get; } //runs after migration of the ShardingSingleDbContext
 
         public async ValueTask ApplyYourChangeAsync(IServiceProvider scopedServices)
         {
-            var context = scopedServices.GetRequiredService<InvoicesDbContext>();
+            var context = scopedServices.GetRequiredService<ShardingSingleDbContext>();
             var numInvoices = await context.Invoices.IgnoreQueryFilters().CountAsync();
             if (numInvoices == 0)
             {
                 var authTenantAdmin = scopedServices.GetRequiredService<IAuthTenantAdminService>();
 
-                var seeder = new SeedInvoiceDbContext(context);
+                var seeder = new SeedShardingDbContext(context);
                 await seeder.SeedInvoicesForAllTenantsAsync(authTenantAdmin.QueryTenants().ToArray());
             }
         }
-
     }
+
 
 }
