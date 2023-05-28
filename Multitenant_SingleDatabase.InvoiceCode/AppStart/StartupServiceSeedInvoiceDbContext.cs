@@ -1,7 +1,7 @@
 ﻿using AuthPermissions.AdminCode;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreCode;
+using Multitenant.SingleLevelSharding.EfCoreCode;
 using RunMethodsSequentially;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.AppStart
+namespace Multitenant.SingleLevelSharding.AppStart
 {
     /// <summary>
     /// If there are no RetailOutlets in the RetailDbContext it seeds the RetailDbContext with RetailOutlets and gives each of them some stock

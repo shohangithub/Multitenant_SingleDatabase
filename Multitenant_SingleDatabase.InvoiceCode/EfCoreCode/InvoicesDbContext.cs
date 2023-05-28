@@ -1,10 +1,10 @@
 ﻿using AuthPermissions.AspNetCore.GetDataKeyCode;
 using AuthPermissions.BaseCode.CommonCode;
 using Microsoft.EntityFrameworkCore;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses;
+using Multitenant.SingleLevelSharding.EfCoreClasses;
 using AuthPermissions.BaseCode.DataLayer.EfCode;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.EfCoreCode
+namespace Multitenant.SingleLevelSharding.EfCoreCode
 {
     public class InvoicesDbContext : DbContext, IDataKeyFilterReadOnly
     {

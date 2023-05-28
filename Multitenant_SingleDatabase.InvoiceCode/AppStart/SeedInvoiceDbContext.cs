@@ -1,9 +1,9 @@
 ﻿using AuthPermissions.BaseCode.DataLayer.Classes;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreCode;
+using Multitenant.SingleLevelSharding.EfCoreClasses;
+using Multitenant.SingleLevelSharding.EfCoreCode;
 using AuthPermissions.BaseCode.CommonCode;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.AppStart
+namespace Multitenant.SingleLevelSharding.AppStart
 {
     public class SeedInvoiceDbContext
     {

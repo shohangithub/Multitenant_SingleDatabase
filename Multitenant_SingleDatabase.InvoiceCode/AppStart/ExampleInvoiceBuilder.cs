@@ -1,20 +1,21 @@
-﻿using Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses;
+﻿using Multitenant.SingleLevelSharding.EfCoreClasses;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.AppStart
+namespace Multitenant.SingleLevelSharding.AppStart
 {
     public enum ExampleInvoiceTypes { Computer = 0, Office = 1, Travel = 2 }
 
     public class ExampleInvoiceBuilder
     {
+        private readonly string _dataKey;
+
+        private readonly Random _random = new Random();
+
         private readonly Dictionary<ExampleInvoiceTypes, string[]> LineItemsDict = new Dictionary<ExampleInvoiceTypes, string[]>()
         {
             { ExampleInvoiceTypes.Computer, new [] {"Windows PC", "Keyboard", "BIG Screen" } },
             { ExampleInvoiceTypes.Office, new [] {"Desk", "Chair", "Filing cabinet", "Waste bin" } },
             { ExampleInvoiceTypes.Travel, new [] { "Taxi", "Flight", "Hotel", "Taxi", "Lunch", "Flight", "Taxi" } },
         };
-
-        private readonly Random _random = new Random();
-        private readonly string _dataKey;
 
         public ExampleInvoiceBuilder(string dataKey)
         {

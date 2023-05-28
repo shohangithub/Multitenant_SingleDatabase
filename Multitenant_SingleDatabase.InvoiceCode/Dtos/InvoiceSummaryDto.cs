@@ -1,6 +1,6 @@
-﻿using Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses;
+﻿using Multitenant.SingleLevelSharding.EfCoreClasses;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.Dtos
+namespace Multitenant.SingleLevelSharding.Dtos
 {
     public class InvoiceSummaryDto
     {

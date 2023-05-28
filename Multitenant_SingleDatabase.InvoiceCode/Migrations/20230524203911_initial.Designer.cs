@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreCode;
+using Multitenant.SingleLevelSharding.EfCoreCode;
 
 #nullable disable
 
-namespace Multitenant_SingleDatabase.InvoiceCode.Migrations
+namespace Multitenant.SingleLevelSharding.Migrations
 {
     [DbContext(typeof(InvoicesDbContext))]
     [Migration("20230524203911_initial")]
@@ -26,7 +26,7 @@ namespace Multitenant_SingleDatabase.InvoiceCode.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses.CompanyTenant", b =>
+            modelBuilder.Entity("Multitenant.SingleLevelSharding.EfCoreClasses.CompanyTenant", b =>
                 {
                     b.Property<int>("CompanyTenantId")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace Multitenant_SingleDatabase.InvoiceCode.Migrations
                     b.ToTable("Companies", "invoice");
                 });
 
-            modelBuilder.Entity("Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses.Invoice", b =>
+            modelBuilder.Entity("Multitenant.SingleLevelSharding.EfCoreClasses.Invoice", b =>
                 {
                     b.Property<int>("InvoiceId")
                         .ValueGeneratedOnAdd()
@@ -82,7 +82,7 @@ namespace Multitenant_SingleDatabase.InvoiceCode.Migrations
                     b.ToTable("Invoices", "invoice");
                 });
 
-            modelBuilder.Entity("Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses.LineItem", b =>
+            modelBuilder.Entity("Multitenant.SingleLevelSharding.EfCoreClasses.LineItem", b =>
                 {
                     b.Property<int>("LineItemId")
                         .ValueGeneratedOnAdd()
@@ -119,16 +119,16 @@ namespace Multitenant_SingleDatabase.InvoiceCode.Migrations
                     b.ToTable("LineItems", "invoice");
                 });
 
-            modelBuilder.Entity("Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses.LineItem", b =>
+            modelBuilder.Entity("Multitenant.SingleLevelSharding.EfCoreClasses.LineItem", b =>
                 {
-                    b.HasOne("Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses.Invoice", null)
+                    b.HasOne("Multitenant.SingleLevelSharding.EfCoreClasses.Invoice", null)
                         .WithMany("LineItems")
                         .HasForeignKey("InvoiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses.Invoice", b =>
+            modelBuilder.Entity("Multitenant.SingleLevelSharding.EfCoreClasses.Invoice", b =>
                 {
                     b.Navigation("LineItems");
                 });

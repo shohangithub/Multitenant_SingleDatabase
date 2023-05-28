@@ -1,7 +1,7 @@
 ﻿using AuthPermissions.BaseCode.CommonCode;
 using Microsoft.EntityFrameworkCore;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.EfCoreCode
+namespace Multitenant.SingleLevelSharding.EfCoreCode
 {
     public static class MarkDataKeyExtension
     {

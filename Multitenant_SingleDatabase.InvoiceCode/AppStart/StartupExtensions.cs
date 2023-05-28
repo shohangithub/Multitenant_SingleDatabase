@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreCode;
+using Multitenant.SingleLevelSharding.EfCoreCode;
 using NetCore.AutoRegisterDi;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.AppStart
+namespace Multitenant.SingleLevelSharding.AppStart
 {
     public static class StartupExtensions
     {

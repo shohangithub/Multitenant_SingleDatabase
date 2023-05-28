@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses
+namespace Multitenant.SingleLevelSharding.EfCoreClasses
 {
     public class Invoice : IDataKeyFilterReadWrite
     {

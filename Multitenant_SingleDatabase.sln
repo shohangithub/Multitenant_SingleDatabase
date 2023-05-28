@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPermissions.AspNetCore", "AuthPermissions.AspNetCore\AuthPermissions.AspNetCore.csproj", "{3F6879F2-C074-4843-BCCA-9AF621751844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant_SingleDatabase.InvoiceCode", "Multitenant_SingleDatabase.InvoiceCode\Multitenant_SingleDatabase.InvoiceCode.csproj", "{378FDB0B-6A12-4C5A-8BCB-3CB3B21B1DC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Multitenant.SingleLevelSharding", "Multitenant_SingleDatabase.InvoiceCode\Multitenant.SingleLevelSharding.csproj", "{378FDB0B-6A12-4C5A-8BCB-3CB3B21B1DC1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthPermissions.SupportCode", "AuthPermissions.SupportCode\AuthPermissions.SupportCode.csproj", "{C93DD96A-35A8-4334-9C91-7B3627C6EF46}"
 EndProject

@@ -1,12 +1,12 @@
 ﻿using AuthPermissions.AdminCode;
 using AuthPermissions.BaseCode.DataLayer.Classes;
 using Microsoft.Extensions.Logging;
-using Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses;
+using Multitenant.SingleLevelSharding.EfCoreClasses;
 using AuthPermissions.BaseCode.CommonCode;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.EfCoreCode
+namespace Multitenant.SingleLevelSharding.EfCoreCode
 {
     public class InvoiceTenantChangeService : ITenantChangeService
     {

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Multitenant_SingleDatabase.InvoiceCode.Migrations
+namespace Multitenant.SingleLevelSharding.Migrations
 {
     /// <inheritdoc />
     public partial class initial : Migration

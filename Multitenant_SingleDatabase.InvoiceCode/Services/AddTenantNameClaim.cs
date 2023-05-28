@@ -2,7 +2,7 @@
 using AuthPermissions.AdminCode;
 using System.Security.Claims;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.Services
+namespace Multitenant.SingleLevelSharding.Services
 {
     /// <summary>
     /// This adds the tenant name as a claim. This speeds up the showing of the tenant name in the display

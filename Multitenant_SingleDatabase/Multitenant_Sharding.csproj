@@ -22,7 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AuthPermissions.SupportCode\AuthPermissions.SupportCode.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
-    <ProjectReference Include="..\Multitenant_SingleDatabase.InvoiceCode\Multitenant_SingleDatabase.InvoiceCode.csproj" />
+    <ProjectReference Include="..\Multitenant_SingleDatabase.InvoiceCode\Multitenant.SingleLevelSharding.csproj" />
   </ItemGroup>
 
 </Project>

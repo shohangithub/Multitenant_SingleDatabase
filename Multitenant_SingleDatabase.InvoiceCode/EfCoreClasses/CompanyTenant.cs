@@ -1,6 +1,6 @@
 ﻿using AuthPermissions.BaseCode.CommonCode;
 
-namespace Multitenant_SingleDatabase.InvoiceCode.EfCoreClasses
+namespace Multitenant.SingleLevelSharding.EfCoreClasses
 {
     public class CompanyTenant : IDataKeyFilterReadWrite
     {
